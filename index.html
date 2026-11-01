@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adib Khosravi | Curious Patient</title>
+<meta name="description" content="My health story, the companies I'm building, and what I'm learning. Co-founder, Regulate Care. Not medical advice.">
+<link rel="canonical" href="https://curiouspatient.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adib Khosravi | Curious Patient">
+<meta property="og:description" content="My health story, the companies I'm building, and what I'm learning.">
+<meta property="og:url" content="https://curiouspatient.com/">
+<meta property="og:image" content="https://curiouspatient.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#141414">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141414; --bg2:#1c1c1c; --line:#2a2a2a;
+    --text:#f4f4f2; --muted:#a6a6a1; --accent:#FFD60A; --accent-ink:#141414;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;font-weight:700}
+  h3{font-size:30px;line-height:1.2;margin:0 0 16px;font-weight:800;letter-spacing:-.01em}
+  p{margin:0 0 18px;max-width:640px}
+  .muted{color:var(--muted)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:5;background:rgba(20,20,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:14px;text-decoration:none}
+  .brand span{color:var(--accent)}
+  nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--text)}
+  @media (max-width:640px){nav ul{display:none}}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 64px;border-top:none}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .hero h1{font-size:clamp(44px,7vw,76px);line-height:1;margin:0 0 20px;font-weight:800;letter-spacing:-.02em}
+  .hero .lede{font-size:21px;color:var(--muted);max-width:520px;margin-bottom:28px}
+  .hero img{width:100%;max-height:78vh;object-fit:cover;object-position:50% 15%;border-radius:4px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid var(--accent);transition:transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);color:var(--accent-ink)}
+  .btn.ghost{color:var(--accent)}
+  @media (max-width:800px){
+    .hero{grid-template-columns:1fr;gap:28px;padding-top:28px}
+    .hero .photo{order:-1;max-width:420px}
+    .hero img{max-height:46vh}
+  }
+
+  /* story */
+  .story{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
+  @media (max-width:800px){.story{grid-template-columns:1fr;gap:32px}}
+  .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+  .timeline li{position:relative;padding:0 0 22px 22px}
+  .timeline li:before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .timeline b{display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .note{font-size:15px;color:var(--muted)}
+
+  /* video */
+  .video{position:relative;padding-top:56.25%;background:#000;border-radius:4px;overflow:hidden;margin-bottom:24px}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:800px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:24px}
+  .card h4{margin:0 0 6px;font-size:20px}
+  .card p{font-size:16px;color:var(--muted);margin:0 0 12px}
+  .card a{color:var(--accent);font-weight:700;font-size:15px;text-decoration:none}
+
+  /* follow */
+  .socials{display:flex;flex-wrap:wrap;gap:10px}
+  .socials a{padding:12px 18px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:500;font-size:16px;background:var(--bg2)}
+  .socials a:hover{border-color:var(--accent);color:var(--accent)}
+  .socials small{color:var(--muted);font-weight:400;margin-left:6px}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:15px;color:var(--muted)}
+  footer .disclose{color:var(--text);font-weight:700;margin-bottom:6px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Curious <span>Patient</span></a>
+    <ul>
+      <li><a href="#story">My story</a></li>
+      <li><a href="#watch">Watch</a></li>
+      <li><a href="#follow">Follow</a></li>
+      <li><a href="#build">What I build</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">Curious Patient</span>
+        <h1>Adib Khosravi</h1>
+        <p class="lede">My health story, the companies I'm building, and what I'm learning.</p>
+        <div class="btns">
+          <a class="btn primary" href="https://www.youtube.com/watch?v=1-i4WgATEic" target="_blank" rel="noopener">&#9654;&nbsp; Watch my story</a>
+          <a class="btn ghost" href="#follow">Follow along</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="adib.jpg" width="960" height="1192" alt="Portrait of Adib Khosravi in glasses and a dark blazer">
+      </div>
+    </header>
+  </div>
+
+  <section id="story">
+    <div class="wrap story">
+      <div>
+        <h2>My story</h2>
+        <p>A year ago a few blood clots in my lung put me in the hospital. Months of tests and specialists later, I had a name for it: antiphospholipid syndrome. My blood clots when it shouldn't.</p>
+        <p>I walked out with a long list of medications and a warning that I couldn't work the way I used to. I was lost. I had built a lot of things, and suddenly none of it meant anything. I was afraid of not being there for my kids.</p>
+        <p>So I went to my friend and doctor, Dr. Ali K. He didn't start with my blood. He started with metabolism, and he showed me that metabolic health and mental health are one subject.</p>
+        <p>I changed three things: how I eat, how I think and how much pressure I put on myself, and how much I walk. It changed how I feel. That's my experience, not advice.</p>
+        <p>Now I'm sharing what I learn, one question at a time.</p>
+      </div>
+      <div>
+        <h2>Timeline</h2>
+        <ul class="timeline">
+          <li><b>September 2025</b>In the hospital with clots in my lung.</li>
+          <li><b>November 2025</b>A diagnosis: APS.</li>
+          <li><b>February 2026</b>Started working with Dr. Ali K.</li>
+          <li><b>June 2026</b>Things started to change.</li>
+          <li><b>September 2026</b>Joined Regulate Care as co-founder and COO.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap">
+      <h2>Watch</h2>
+      <h3>Why I disappeared for a year</h3>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/1-i4WgATEic" title="Why I disappeared for a year" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="btns">
+        <a class="btn ghost" href="https://www.youtube.com/@thecuriouspatient" target="_blank" rel="noopener">All videos on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="show">
+    <div class="wrap">
+      <h2>The show</h2>
+      <h3>Curious Patient</h3>
+      <p class="muted">The questions about your body nobody explained, asked out loud. New videos every week. The podcast is on its way.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://www.youtube.com/@thecuriouspatient" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="follow">
+    <div class="wrap">
+      <h2>Follow</h2>
+      <div class="socials">
+        <a href="https://www.instagram.com/curiouspatient" target="_blank" rel="noopener">Instagram<small>@curiouspatient</small></a>
+        <a href="https://www.threads.com/@curiouspatient" target="_blank" rel="noopener">Threads<small>@curiouspatient</small></a>
+        <a href="https://www.youtube.com/@thecuriouspatient" target="_blank" rel="noopener">YouTube<small>@thecuriouspatient</small></a>
+        <a href="https://www.tiktok.com/@mrkhosi1" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.linkedin.com/in/adibkhosravi" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/thecuriouspatient" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="wrap">
+      <h2>What I build</h2>
+      <div class="cards">
+        <div class="card">
+          <h4>Regulate Care</h4>
+          <p>I'm a co-founder and COO.</p>
+          <a href="https://regulate.care" target="_blank" rel="noopener">regulate.care &rarr;</a>
+        </div>
+        <div class="card">
+          <h4>Ninedot</h4>
+          <p>Digital marketing agency, Providence, RI and Irvine, CA. I'm Co-CEO.</p>
+        </div>
+        <div class="card">
+          <h4>KMS Professional</h4>
+          <p>Part-time executive and advisory support for startups and small businesses. I'm the founder.</p>
+          <a href="https://kmspro.com" target="_blank" rel="noopener">kmspro.com &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <h3>Podcast guests, press and partnerships.</h3>
+      <p class="muted">I read everything. The fastest way to reach me is a message on Instagram or LinkedIn.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://ig.me/m/curiouspatient" target="_blank" rel="noopener">Message on Instagram</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/adibkhosravi" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+      <p class="note" style="margin-top:20px">I can't answer medical questions. Please ask your own doctor.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclose">Co-founder, Regulate Care. Not medical advice.</div>
+    <div>&copy; 2026 Adib Khosravi &middot; Orange County, California</div>
+  </div>
+</footer>
+
+</body>
+</html>
