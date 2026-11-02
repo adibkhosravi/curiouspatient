@@ -62,6 +62,16 @@
     .hero img{max-height:46vh}
   }
 
+  /* this week */
+  .week{padding:8px 0 64px;border-top:none}
+  .week-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:800px){.week-grid{grid-template-columns:1fr}}
+  .week-card{display:block;text-decoration:none;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:22px 24px;transition:border-color .15s,transform .15s}
+  .week-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .week-card .tag{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .week-card .what{display:block;font-size:19px;font-weight:700;line-height:1.3;margin-bottom:10px}
+  .week-card .go{font-size:15px;color:var(--muted)}
+
   /* story */
   .story{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
   @media (max-width:800px){.story{grid-template-columns:1fr;gap:32px}}
@@ -100,9 +110,9 @@
   <div class="wrap">
     <a class="brand" href="#top">Curious <span>Patient</span></a>
     <ul>
+      <li><a href="#this-week">This week</a></li>
       <li><a href="#story">My story</a></li>
-      <li><a href="#watch">Watch</a></li>
-      <li><a href="#follow">Follow</a></li>
+            <li><a href="#follow">Follow</a></li>
       <li><a href="#build">What I build</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -126,6 +136,31 @@
       </div>
     </header>
   </div>
+
+  <!-- THIS WEEK: change these three cards every week. Steps in docs/site-updates.md -->
+  <section class="week" id="this-week" aria-label="This week">
+    <div class="wrap">
+      <h2>This week</h2>
+      <div class="week-grid">
+        <a class="week-card" href="https://www.youtube.com/watch?v=boQa0s25rEw" target="_blank" rel="noopener">
+          <span class="tag">New episode</span>
+          <span class="what">Three things my doctor taught me that nobody else did</span>
+          <span class="go">Watch on YouTube &rarr;</span>
+        </a>
+        <a class="week-card" href="https://www.instagram.com/reel/DfNON1jgJVt/" target="_blank" rel="noopener">
+          <span class="tag">Latest Reel</span>
+          <span class="what">I watched what a meal did to my body</span>
+          <span class="go">Watch on Instagram &rarr;</span>
+        </a>
+        <a class="week-card" href="/story">
+          <span class="tag">Start here</span>
+          <span class="what">Why I disappeared for a year</span>
+          <span class="go">curiouspatient.com/story &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- /THIS WEEK -->
 
   <section id="story">
     <div class="wrap story">
@@ -152,11 +187,12 @@
 
   <section id="watch">
     <div class="wrap">
-      <h2>Watch</h2>
+      <h2>Start here</h2>
       <h3>Why I disappeared for a year</h3>
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/1-i4WgATEic" title="Why I disappeared for a year" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+      <p class="muted">Start here. Then the short links: <a href="/three">curiouspatient.com/three</a> for what my doctor taught me, <a href="/talk">/talk</a> for his Peptide Talk, <a href="/studio">/studio</a> for the studio build.</p>
       <div class="btns">
         <a class="btn ghost" href="https://www.youtube.com/@thecuriouspatient" target="_blank" rel="noopener">All videos on YouTube</a>
       </div>
