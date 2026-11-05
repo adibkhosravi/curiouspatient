@@ -50,6 +50,9 @@
   .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
   .hero h1{font-size:clamp(44px,7vw,76px);line-height:1;margin:0 0 20px;font-weight:800;letter-spacing:-.02em}
   .hero .lede{font-size:21px;color:var(--muted);max-width:520px;margin-bottom:28px}
+  .hero .lede + .hook{margin-top:-12px}
+  .hero .hook{font-size:22px;line-height:1.4;font-weight:600;color:var(--text);max-width:520px;margin:0 0 30px;padding-left:16px;border-left:3px solid var(--accent)}
+  @media (max-width:800px){.hero .hook{font-size:19px}}
   .hero img{width:100%;max-height:78vh;object-fit:cover;object-position:50% 15%;border-radius:4px}
   .btns{display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid var(--accent);transition:transform .15s}
@@ -127,6 +130,7 @@
         <span class="eyebrow">Curious Patient</span>
         <h1>Adib Khosravi</h1>
         <p class="lede">My health story, the companies I'm building, and what I'm learning.</p>
+        <p class="hook">For months, nobody could tell me why my blood was clotting. So I got curious, and I'm sharing everything I learn.</p>
         <div class="btns">
           <a class="btn primary" href="https://www.youtube.com/watch?v=1-i4WgATEic" target="_blank" rel="noopener">&#9654;&nbsp; Watch my story</a>
           <a class="btn ghost" href="#follow">Follow along</a>
